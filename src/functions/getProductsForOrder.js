@@ -9,9 +9,9 @@ export default (data, id) => {
 
   const order = data.orders.find(o => o.id === id)
 
-  console.log(id, order)
-
-  if (!order) return null
+  if (!order) {
+    return null
+  }
 
   return order.products.map(productId => data.products.find(p => p.id === productId))
 }
