@@ -7,6 +7,10 @@ export default (data, id) => {
     throw new Error('getProductsForOrder(): data.orders is missing')
   }
 
+  if (!id) {
+    throw new Error('getProductsForOrder(): id is missing')
+  }
+
   const order = data.orders.find(o => o.id === id)
 
   if (!order) {
