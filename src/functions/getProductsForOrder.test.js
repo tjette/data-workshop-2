@@ -12,19 +12,19 @@ describe('getProductsForOrder', () => {
   it(
     'throws with no data',
     () =>
-      expect(getProductsForOrder(null, 1)).toThrow()
+      expect(() => getProductsForOrder(null, 1)).toThrow()
   )
 
   it(
     'throws with undefined orders',
     () =>
-      expect(getProductsForOrder({}, 1)).toThrow()
+      expect(() => getProductsForOrder({}, 1)).toThrow()
   )
 
   it(
-    'returns null with empty orders',
+    'returns null if the order is not found',
     () =>
-      expect(getProductsForOrder({orders: []}, 1)).toBeNull()
+      expect(getProductsForOrder(DATA, 100)).toBeNull()
   )
 
   it(
