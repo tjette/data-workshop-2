@@ -22,6 +22,12 @@ describe('getProductsForOrder', () => {
   )
 
   it(
+    'throws with no id',
+    () =>
+      expect(() => getProductsForOrder(DATA, undefined)).toThrow()
+  )
+
+  it(
     'returns null if the order is not found',
     () =>
       expect(getProductsForOrder(DATA, 100)).toBeNull()
